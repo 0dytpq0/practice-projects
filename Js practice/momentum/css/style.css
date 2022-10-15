@@ -5,3 +5,8 @@ body {
 .hidden {
     display: none;
 }
+
+
+body {
+    background-size: 100% 100%;
+}
