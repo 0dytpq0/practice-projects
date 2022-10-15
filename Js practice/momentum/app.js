@@ -1,31 +1,32 @@
-const title = document.querySelector("h2");
 
-const superEventHandler = {
-    mouseIsHere: function () {
-        title.innerText = "Mouse is Here!";
-        title.style.color = "blue";
-    },
-    mouseIsGone: function () {
-        title.innerText = "Mouse is Gone!";
-        title.style.color = "tomato";
-    },
-    rightClicked: function () {
-        title.innerText = "That was a right click!";
-        title.style.color = "purple";
-    },
-    resized: function () {
-        title.innerText = "You just Resized!";
-        title.style.color = "steal";
-    }
-};
+const loginForm = document.querySelector(".login-form");
+const loginInput = document.querySelector(".login-form input");
+const greeting = document.querySelector("#greeting");
 
+const HIDDEN_CLASSNAME = "hidden"
+const USERNAME_KEY = "username"
 
+function onLoginSubmit(event) {
+    event.preventDefault();
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    const username = loginInput.value;
+    localStorage.setItem(USERNAME_KEY, username);
+    paintGreetings(username);
+}
+
+function paintGreetings(username) {
+    greeting.innerText = `Hello   ${username}`
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+}
 
 
+loginForm.addEventListener("submit", onLoginSubmit)
 
-title.addEventListener("mouseover", superEventHandler.mouseIsHere);
-title.addEventListener("mouseleave", superEventHandler.mouseIsGone);
-window.addEventListener("contextmenu", superEventHandler.rightClicked);
-window.addEventListener("resize", superEventHandler.resized);
+const savedUsername = localStorage.getItem(USERNAME_KEY);
 
-
+if (savedUsername === null) {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+    paintGreetings(savedUsername);
+}
