@@ -43,8 +43,8 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach(element => { //각각의 element들한테 함수 적용
-        console.log("this is the turn of ", element);
+    parsedToDos.forEach(item => { //각각의 element들한테 함수 적용
+        console.log("this is the turn of ", item);
     });
 }
 
