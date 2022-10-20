@@ -3,7 +3,7 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.querySelector(".todo-list");
 
 const TODOS_KEY = "toDos"
-const toDos = [];
+let toDos = [];
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -15,13 +15,14 @@ function deleteToDo(event) {
     const li = event.target.parentElement;
     li.remove();
 }
-
+//toDo 생성하기.
 function paintToDo(newTodo) {
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "X";
-    span.innerText = newTodo;
     button.addEventListener("click", deleteToDo);
     li.appendChild(span); //append는 맨 마지막에 놓여져야함.
     li.appendChild(button);
@@ -32,19 +33,24 @@ function handleToDoSubmit(event) {
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = ""; //toDoInput창 비우기.
-    toDos.push(newTodo); //localstprage에 배열을 저장하고 싶지만 문자만 저장 가능.
-    paintToDo(newTodo);  //jsonstringify Js object나 array 또는 어떤 js 코드간에 그걸 string으로 만들어준다.
+    const newTodoObj = { //obj로 만들어서 푸쉬함 id는 랜덤값을 위해 date.now사용
+        text: newTodo,
+        id: Date.now(),
+    };
+    toDos.push(newTodoObj); //localstprage에 배열을 저장하고 싶지만 문자만 저장 가능.
+    paintToDo(newTodoObj);  //jsonstringify Js object나 array 또는 어떤 js 코드간에 그걸 string으로 만들어준다.
     saveToDos();         //string을 json.parse안에 넣으면 배열을 얻을 수 있다.
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
-
+//저장된 것 불ㄹ오기
 if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach(item => { //각각의 element들한테 함수 적용
-        console.log("this is the turn of ", item);
-    });
+    parsedToDos.forEach(paintToDo); //저장된 것들 불러옴.
+    // parsedToDos.forEach(item => { //각각의 element들한테 함수 적용
+    //     console.log("this is the turn of ", item);
+    toDos = parsedToDos; //toDos를 빈 배열이 아니게 만들어서 값을 유지하게 만듦.
 }
 
