@@ -13,7 +13,9 @@ function deleteToDo(event) {
     //event에서 정보를 얻고 event.target은 클릭된 html element임 
     //여기서 parentElement를 보면 어떤 것이 타겟인지 알 수 있지.
     const li = event.target.parentElement;
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     li.remove();
+    saveToDos()
 }
 //toDo 생성하기.
 function paintToDo(newTodo) {
@@ -48,9 +50,8 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 //저장된 것 불ㄹ오기
 if (savedToDos !== null) {
     const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos; //toDos를 빈 배열이 아니게 만들어서 값을 유지하게 만듦.
     parsedToDos.forEach(paintToDo); //저장된 것들 불러옴.
     // parsedToDos.forEach(item => { //각각의 element들한테 함수 적용
     //     console.log("this is the turn of ", item);
-    toDos = parsedToDos; //toDos를 빈 배열이 아니게 만들어서 값을 유지하게 만듦.
 }
-
