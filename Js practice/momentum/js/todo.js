@@ -25,6 +25,9 @@ function paintToDo(newTodo) {
     span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "X";
+    button.style.backgroundColor = "rgba(0,0,0,0)";
+    button.style.color = "white";
+    button.style.border = "none";
     button.addEventListener("click", deleteToDo);
     li.appendChild(span); //append는 맨 마지막에 놓여져야함.
     li.appendChild(button);
