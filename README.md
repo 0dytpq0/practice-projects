@@ -7,4 +7,4 @@ make a several things using only html, css &amp; Js for practice vanilla JS
 # List
 - [x] HideNavbar On Scroll HTML CSS & JS
 - [x] Animated Notification Button HTML CSS & JS
-- [] Sidebar Menu HTML CSS & JQuery
+- [x] Sidebar Menu HTML CSS & JQuery
