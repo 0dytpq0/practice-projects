@@ -8,3 +8,4 @@ make a several things using only html, css &amp; Js for practice vanilla JS
 - [x] HideNavbar On Scroll HTML CSS & JS
 - [x] Animated Notification Button HTML CSS & JS
 - [x] Sidebar Menu HTML CSS & JQuery
+- [] Calculator HTML CSS & JS
