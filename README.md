@@ -5,7 +5,9 @@ make a several things using only html, css &amp; Js for practice vanilla JS
 
 해당 프로젝트들은 Coding Panel 채널의 Javascript projects 플레이리스트의 프로젝트입니다.
 # List
+09/20
 - [x] HideNavbar On Scroll HTML CSS & JS
 - [x] Animated Notification Button HTML CSS & JS
 - [x] Sidebar Menu HTML CSS & JQuery
-- [] Calculator HTML CSS & JS
+09/21
+- [x] Calculator HTML CSS & JS
