@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+// @import 방식의 문제점은 다른사이트에 호스팅된 외부 CSS 파일을 가져오므로 네트워크 속도에 영향을 받을 수 있습니다.
+// 그렇기에 대부분 웹 애플리케이션은 Node.js 패키지 형태로 구현된 CSS 프레임 워크를 내장하는 형태로 배포한다.
+// @import 규칙은 웹 안전 글꼴을 사용해야한다는 제약이 있다.
+// 웹 안전 글꼴은 사용자 컴퓨터에 설치되지 않은 때에도 웹 페이지에 항상 올바르게 표시되는 글꼴을 의미합니다.(구글 제공 = 웹 안전 글꼴)
+// fontsource는 구글 글꼴과 가은 오픈소스 웹 안전 글꼴을 패키지 형태로 설치해 줍니다. npm i @fontsource/스네이크-표기법-글꼴명 <- 이렇게 설치하면된다.
+.material-icons {
+  font-family: 'Material Icons';
+  display: inline-block;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
