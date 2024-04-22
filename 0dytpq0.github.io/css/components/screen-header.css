@@ -1,0 +1,34 @@
+@import "reset.css";
+
+
+.screen-header {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--horizontal-space);
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.screen-header__title {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.screen-header__icons span {
+    margin-left: 20px;
+}
+
+@keyframes rotateGear {
+    form {
+        transform: none;
+    }
+
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+.screen-header__icons .fa-gear:hover {
+    animation: rotateGear 2s linear infinite;
+}
