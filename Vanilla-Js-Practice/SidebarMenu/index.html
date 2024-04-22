@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side Menu Bar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('i').click(function() {
+        $('ul').toggleClass('ul_show');
+        $('section').toggleClass('slide_image');
+      });
+      $('li').click(function(){
+        $(this).addClass('active').siblings().removeClass('active');
+      })
+    })
+  </script>
+</head>
+<body>
+  <ul>
+    <li class="active"><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#feedback">Feedback</a></li>
+    <li><a class = "contact" href="#contact">Contact</a></li>
+  </ul>
+  <section>
+    <i class="fas fa-bars"></i>
+    <div class="sec1"></div>
+    <h1 id="about">About Section</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat consequuntur ea libero, enim fugit aliquid quae suscipit est asperiores ipsam perferendis debitis soluta recusandae fugiat eos illum eum aperiam voluptates voluptatibus, et commodi ducimus. Eius explicabo qui in sint labore! Nihil nulla numquam pariatur sint itaque suscipit nesciunt molestiae. Dolorem fugiat rem magni et quas veniam nostrum cumque ipsam, libero rerum reprehenderit. Tenetur facere aliquam ipsa necessitatibus itaque quisquam, magnam aspernatur sed corporis animi earum quam, laudantium cumque labore dolor alias atque libero aliquid id pariatur. Accusantium accusamus eveniet nisi earum autem? Voluptates necessitatibus possimus velit quidem illum eaque, rerum sint temporibus tempora esse fuga in laboriosam provident distinctio iusto, dolores officiis sapiente saepe cupiditate aut. Aliquam fugit doloribus ut ea facilis voluptatum. Aspernatur expedita iste nobis mollitia hic consectetur sint totam commodi odit excepturi voluptatem aperiam asperiores possimus neque quibusdam ut quasi, fuga eius eligendi vel maiores, consequuntur magnam. Ut, expedita? Numquam odit labore enim, reiciendis commodi, ullam iure optio minus dignissimos eveniet cupiditate culpa repellendus, error odio obcaecati reprehenderit. Quas aperiam at soluta corrupti molestiae delectus commodi ut reprehenderit, quam magnam maiores possimus autem debitis cumque labore quis accusantium nisi quod numquam fuga obcaecati ullam magni. Quis, excepturi?</p>
+    <div class="sec2"></div>
+    <h1 id="portfolio">Portfolio Section</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat consequuntur ea libero, enim fugit aliquid quae suscipit est asperiores ipsam perferendis debitis soluta recusandae fugiat eos illum eum aperiam voluptates voluptatibus, et commodi ducimus. Eius explicabo qui in sint labore! Nihil nulla numquam pariatur sint itaque suscipit nesciunt molestiae. Dolorem fugiat rem magni et quas veniam nostrum cumque ipsam, libero rerum reprehenderit. Tenetur facere aliquam ipsa necessitatibus itaque quisquam, magnam aspernatur sed corporis animi earum quam, laudantium cumque labore dolor alias atque libero aliquid id pariatur. Accusantium accusamus eveniet nisi earum autem? Voluptates necessitatibus possimus velit quidem illum eaque, rerum sint temporibus tempora esse fuga in laboriosam provident distinctio iusto, dolores officiis sapiente saepe cupiditate aut. Aliquam fugit doloribus ut ea facilis voluptatum. Aspernatur expedita iste nobis mollitia hic consectetur sint totam commodi odit excepturi voluptatem aperiam asperiores possimus neque quibusdam ut quasi, fuga eius eligendi vel maiores, consequuntur magnam. Ut, expedita? Numquam odit labore enim, reiciendis commodi, ullam iure optio minus dignissimos eveniet cupiditate culpa repellendus, error odio obcaecati reprehenderit. Quas aperiam at soluta corrupti molestiae delectus commodi ut reprehenderit, quam magnam maiores possimus autem debitis cumque labore quis accusantium nisi quod numquam fuga obcaecati ullam magni. Quis, excepturi?</p>
+    <div class="sec3"></div>
+    <h1 id="gallery">Gallery Section</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat consequuntur ea libero, enim fugit aliquid quae suscipit est asperiores ipsam perferendis debitis soluta recusandae fugiat eos illum eum aperiam voluptates voluptatibus, et commodi ducimus. Eius explicabo qui in sint labore! Nihil nulla numquam pariatur sint itaque suscipit nesciunt molestiae. Dolorem fugiat rem magni et quas veniam nostrum cumque ipsam, libero rerum reprehenderit. Tenetur facere aliquam ipsa necessitatibus itaque quisquam, magnam aspernatur sed corporis animi earum quam, laudantium cumque labore dolor alias atque libero aliquid id pariatur. Accusantium accusamus eveniet nisi earum autem? Voluptates necessitatibus possimus velit quidem illum eaque, rerum sint temporibus tempora esse fuga in laboriosam provident distinctio iusto, dolores officiis sapiente saepe cupiditate aut. Aliquam fugit doloribus ut ea facilis voluptatum. Aspernatur expedita iste nobis mollitia hic consectetur sint totam commodi odit excepturi voluptatem aperiam asperiores possimus neque quibusdam ut quasi, fuga eius eligendi vel maiores, consequuntur magnam. Ut, expedita? Numquam odit labore enim, reiciendis commodi, ullam iure optio minus dignissimos eveniet cupiditate culpa repellendus, error odio obcaecati reprehenderit. Quas aperiam at soluta corrupti molestiae delectus commodi ut reprehenderit, quam magnam maiores possimus autem debitis cumque labore quis accusantium nisi quod numquam fuga obcaecati ullam magni. Quis, excepturi?</p>
+    <div class="sec4"></div>
+    <h1 id="services">Services Section</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat consequuntur ea libero, enim fugit aliquid quae suscipit est asperiores ipsam perferendis debitis soluta recusandae fugiat eos illum eum aperiam voluptates voluptatibus, et commodi ducimus. Eius explicabo qui in sint labore! Nihil nulla numquam pariatur sint itaque suscipit nesciunt molestiae. Dolorem fugiat rem magni et quas veniam nostrum cumque ipsam, libero rerum reprehenderit. Tenetur facere aliquam ipsa necessitatibus itaque quisquam, magnam aspernatur sed corporis animi earum quam, laudantium cumque labore dolor alias atque libero aliquid id pariatur. Accusantium accusamus eveniet nisi earum autem? Voluptates necessitatibus possimus velit quidem illum eaque, rerum sint temporibus tempora esse fuga in laboriosam provident distinctio iusto, dolores officiis sapiente saepe cupiditate aut. Aliquam fugit doloribus ut ea facilis voluptatum. Aspernatur expedita iste nobis mollitia hic consectetur sint totam commodi odit excepturi voluptatem aperiam asperiores possimus neque quibusdam ut quasi, fuga eius eligendi vel maiores, consequuntur magnam. Ut, expedita? Numquam odit labore enim, reiciendis commodi, ullam iure optio minus dignissimos eveniet cupiditate culpa repellendus, error odio obcaecati reprehenderit. Quas aperiam at soluta corrupti molestiae delectus commodi ut reprehenderit, quam magnam maiores possimus autem debitis cumque labore quis accusantium nisi quod numquam fuga obcaecati ullam magni. Quis, excepturi?</p>
+    <div class="sec5"></div>
+    <h1 id="feedback">Feedback Section</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat consequuntur ea libero, enim fugit aliquid quae suscipit est asperiores ipsam perferendis debitis soluta recusandae fugiat eos illum eum aperiam voluptates voluptatibus, et commodi ducimus. Eius explicabo qui in sint labore! Nihil nulla numquam pariatur sint itaque suscipit nesciunt molestiae. Dolorem fugiat rem magni et quas veniam nostrum cumque ipsam, libero rerum reprehenderit. Tenetur facere aliquam ipsa necessitatibus itaque quisquam, magnam aspernatur sed corporis animi earum quam, laudantium cumque labore dolor alias atque libero aliquid id pariatur. Accusantium accusamus eveniet nisi earum autem? Voluptates necessitatibus possimus velit quidem illum eaque, rerum sint temporibus tempora esse fuga in laboriosam provident distinctio iusto, dolores officiis sapiente saepe cupiditate aut. Aliquam fugit doloribus ut ea facilis voluptatum. Aspernatur expedita iste nobis mollitia hic consectetur sint totam commodi odit excepturi voluptatem aperiam asperiores possimus neque quibusdam ut quasi, fuga eius eligendi vel maiores, consequuntur magnam. Ut, expedita? Numquam odit labore enim, reiciendis commodi, ullam iure optio minus dignissimos eveniet cupiditate culpa repellendus, error odio obcaecati reprehenderit. Quas aperiam at soluta corrupti molestiae delectus commodi ut reprehenderit, quam magnam maiores possimus autem debitis cumque labore quis accusantium nisi quod numquam fuga obcaecati ullam magni. Quis, excepturi?</p>
+    <div class="sec6"></div>
+    <h1 id="contact">Contact Section</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat consequuntur ea libero, enim fugit aliquid quae suscipit est asperiores ipsam perferendis debitis soluta recusandae fugiat eos illum eum aperiam voluptates voluptatibus, et commodi ducimus. Eius explicabo qui in sint labore! Nihil nulla numquam pariatur sint itaque suscipit nesciunt molestiae. Dolorem fugiat rem magni et quas veniam nostrum cumque ipsam, libero rerum reprehenderit. Tenetur facere aliquam ipsa necessitatibus itaque quisquam, magnam aspernatur sed corporis animi earum quam, laudantium cumque labore dolor alias atque libero aliquid id pariatur. Accusantium accusamus eveniet nisi earum autem? Voluptates necessitatibus possimus velit quidem illum eaque, rerum sint temporibus tempora esse fuga in laboriosam provident distinctio iusto, dolores officiis sapiente saepe cupiditate aut. Aliquam fugit doloribus ut ea facilis voluptatum. Aspernatur expedita iste nobis mollitia hic consectetur sint totam commodi odit excepturi voluptatem aperiam asperiores possimus neque quibusdam ut quasi, fuga eius eligendi vel maiores, consequuntur magnam. Ut, expedita? Numquam odit labore enim, reiciendis commodi, ullam iure optio minus dignissimos eveniet cupiditate culpa repellendus, error odio obcaecati reprehenderit. Quas aperiam at soluta corrupti molestiae delectus commodi ut reprehenderit, quam magnam maiores possimus autem debitis cumque labore quis accusantium nisi quod numquam fuga obcaecati ullam magni. Quis, excepturi?</p>
+    <div class="sec7"></div>
+
+  </section>
+</body>
+</html>
