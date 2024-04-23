@@ -7,7 +7,7 @@ class Movies {
 
   async initialize() {
     await this.#fetchMovieInfo();
-    this.#renderMovieCards();
+    this.#renderMovieCards(this.#movies);
   }
 
   getMoviesInfo() {
@@ -49,10 +49,10 @@ class Movies {
     });
   }
 
-  #renderMovieCards() {
+  #renderMovieCards(movies) {
     const container = document.getElementById("movie-list");
     container.innerHTML = "";
-    this.#movies.forEach((value) => {
+    movies.forEach((value) => {
       const card = document.createElement("div");
       card.classList.add("movie-card");
 
@@ -86,8 +86,10 @@ class Movies {
         filteredMovies.set(title, movie);
       }
     });
-    this.#movies = filteredMovies;
-    this.#renderMovieCards();
+    console.log(filteredMovies.size, typeof filteredMovies.size);
+    if (filteredMovies.size === 0) return this.#renderMovieCards(this.#movies);
+
+    return this.#renderMovieCards(filteredMovies);
   }
 }
 
