@@ -79,11 +79,14 @@ class Movies {
 
   searchMovies(keyword) {
     const filteredMovies = new Map();
+    let isShowing = false;
     this.#movies.forEach((movie, title) => {
       if (title.toLowerCase().includes(keyword.toLowerCase())) {
         filteredMovies.set(title, movie);
+        isShowing = true;
       }
     });
+    if (isShowing === false) alert("해당 영화는 현재 상영중이지 않습니다.");
     if (filteredMovies.size === 0) return this.#renderMovieCards(this.#movies);
 
     return this.#renderMovieCards(filteredMovies);
@@ -95,7 +98,13 @@ movies.initialize();
 
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
-searchButton.addEventListener("click", (event) => {
+searchInput.addEventListener("keyup", (e) => {
+  const keyword = e.target.value;
+  if (e.keyCode === 13) {
+    movies.searchMovies(keyword);
+  }
+});
+searchButton.addEventListener("click", (e) => {
   const keyword = searchInput.value;
 
   movies.searchMovies(keyword);
