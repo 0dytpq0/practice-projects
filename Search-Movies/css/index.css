@@ -1,8 +1,33 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #fefbf6;
+}
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#title {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #f35626;
+  background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+  background-clip: text;
+  animation: hue 10s infinite linear;
 }
 
+@keyframes hue {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -15,6 +40,54 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  #search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5f6f52;
+    height: 34px;
+    font-weight: bold;
+    font-size: 16px;
+    * {
+      margin: 5px;
+    }
+    #search-input {
+      border-radius: 5px;
+      border: 2px solid #5f6f52;
+      height: 28px;
+      font-size: 16px;
+    }
+
+    #search-input:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    #search-button {
+      background-color: white;
+      border-radius: 5px;
+      border: 2px solid #5f6f52;
+      color: #5f6f52;
+      font-weight: bold;
+      height: 100%;
+      border: 0px;
+      background-color: #5f6f52;
+      box-shadow: 1px 1px 6px #5f6f52;
+      color: white;
+      font-weight: bold;
+
+      animation-name: keybtn-language;
+      animation-duration: 0.2s;
+    }
+    #search-button:active {
+      box-shadow: inset -0.3rem -0.1rem 1.4rem #5f6f52,
+        inset 0.3rem 0.4rem 0.8rem #5f6f52;
+      cursor: pointer;
+    }
+    #search-button:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 section {
@@ -27,10 +100,16 @@ section {
   .movie-card {
     margin: 50px;
     width: 500px;
+    transform: scale(1);
+    transition: 0.5s ease-in-out;
 
     img {
       width: 500px;
       height: 550px;
+      border-radius: 50px;
     }
+  }
+  .movie-card:hover {
+    transform: scale(1.1);
   }
 }
