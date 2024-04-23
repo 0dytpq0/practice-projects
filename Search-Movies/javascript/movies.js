@@ -81,12 +81,9 @@ class Movies {
     const filteredMovies = new Map();
     this.#movies.forEach((movie, title) => {
       if (title.toLowerCase().includes(keyword.toLowerCase())) {
-        console.log(title);
-        console.log(movie);
         filteredMovies.set(title, movie);
       }
     });
-    console.log(filteredMovies.size, typeof filteredMovies.size);
     if (filteredMovies.size === 0) return this.#renderMovieCards(this.#movies);
 
     return this.#renderMovieCards(filteredMovies);
@@ -99,7 +96,6 @@ movies.initialize();
 const searchInput = document.getElementById("search-input");
 const searchButton = document.getElementById("search-button");
 searchButton.addEventListener("click", (event) => {
-  console.log(searchInput.value);
   const keyword = searchInput.value;
 
   movies.searchMovies(keyword);
