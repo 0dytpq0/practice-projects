@@ -41,7 +41,7 @@ class Movies {
 
   #parseMovieData(results) {
     results.forEach((element) => {
-      this.#movies.set(element.title, {
+      this.#movies.set(element.poster_path, {
         overview: element.overview,
         title: element.title,
         poster_path: element.poster_path,
@@ -80,9 +80,10 @@ class Movies {
   searchMovies(keyword) {
     const filteredMovies = new Map();
     let isShowing = false;
-    this.#movies.forEach((movie, title) => {
-      if (title.toLowerCase().includes(keyword.toLowerCase())) {
-        filteredMovies.set(title, movie);
+    this.#movies.forEach((movie, poster_path) => {
+      if (movie.title.toLowerCase().includes(keyword.toLowerCase())) {
+        //같은 이름의 다른 영화가 있더라도 데이터가 덮어 씌어진다.
+        filteredMovies.set(poster_path, movie);
         isShowing = true;
       }
     });
@@ -104,6 +105,7 @@ searchInput.addEventListener("keyup", (e) => {
     movies.searchMovies(keyword);
   }
 });
+
 searchButton.addEventListener("click", (e) => {
   const keyword = searchInput.value;
 
