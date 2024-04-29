@@ -81,7 +81,7 @@ class Movies {
     const filteredMovies = new Map();
     let isShowing = false;
     this.#movies.forEach((movie, poster_path) => {
-      if (movie.title.toLowerCase().includes(keyword.toLowerCase())) {
+      if (movie.title.toLowerCase().includes(keyword.trim().toLowerCase())) {
         //같은 이름의 다른 영화가 있더라도 데이터가 덮어 씌어진다.
         filteredMovies.set(poster_path, movie);
         isShowing = true;
