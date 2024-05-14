@@ -2,19 +2,14 @@ import { onCompleteTodo, onDeleteTodo } from "../container/TodoFunctions";
 import { Button } from "./Button";
 
 export const Card = ({ allTodos, setAllTodos, isDone }) => {
-  const doneTodos =
-    allTodos &&
-    allTodos.filter((item) => {
-      return item.completed === true;
-    });
-  const haveTodos =
-    allTodos &&
-    allTodos.filter((item) => {
-      return item.completed === false;
-    });
+  const doneTodos = allTodos.filter((item) => {
+    return item.completed === true;
+  });
+  const haveTodos = allTodos.filter((item) => {
+    return item.completed === false;
+  });
   const cards = isDone
-    ? doneTodos &&
-      doneTodos.map((todo) => (
+    ? doneTodos.map((todo) => (
         <div key={todo.id} className="card done">
           <div className="card-title">{todo.title}</div>
           <div className="card-description">{todo.description}</div>
@@ -34,8 +29,7 @@ export const Card = ({ allTodos, setAllTodos, isDone }) => {
           </div>
         </div>
       ))
-    : haveTodos &&
-      haveTodos.map((todo) => (
+    : haveTodos.map((todo) => (
         <div key={todo.id} className="card have">
           <div className="card-title">{todo.title}</div>
           <div className="card-description">{todo.description}</div>
