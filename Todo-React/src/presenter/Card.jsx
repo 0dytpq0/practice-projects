@@ -1,5 +1,4 @@
-import { onCompleteTodo } from "../container/Complete";
-import { onDeleteTodo } from "../container/Delete";
+import { onCompleteTodo, onDeleteTodo } from "../container/TodoFunctions";
 import { Button } from "./Button";
 
 export const Card = ({ allTodos, setAllTodos, isDone }) => {

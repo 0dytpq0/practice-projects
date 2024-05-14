@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { onChangeInputs } from "../container/ChangeInput";
-import { onCreate } from "../container/Create";
+import { onCreate } from "../container/TodoFunctions";
 import { Button } from "./Button";
 import { Input } from "./Input";
 
