@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Button } from "../container/Button";
+import { onChangeInputs } from "../container/ChangeInput";
 import { onCreate } from "../container/Create";
-import { onChangeInputs } from "../container/Input";
+import { Button } from "./Button";
+import { Input } from "./Input";
 
 export const InputBox = ({ allTodos, setAllTodos }) => {
   const [description, setDescription] = useState("");
@@ -14,33 +15,31 @@ export const InputBox = ({ allTodos, setAllTodos }) => {
     completed: false,
   };
   return (
-    <div>
-      <input
-        onChange={(e) => {
-          const inputValue = onChangeInputs(e);
-          setTitle(() => inputValue);
-          setTodoData(() => ({
-            title: inputValue,
-            description: todoData.description,
-          }));
-        }}
-      />
-      <input
-        onChange={(e) => {
-          const inputValue = onChangeInputs(e);
-          setDescription(() => inputValue);
-          setTodoData(() => ({
-            description: inputValue,
-            title: todoData.title,
-          }));
-        }}
-      />
-      <Button
-        onClickFunction={() => {
-          onCreate({ setAllTodos, newTodo, allTodos });
-        }}
-        text={"create"}
-      />
+    <div className="inputBox-container">
+      <div className="inputBox-header">header</div>
+      <div className="inputBox-section">
+        <Input
+          onChangeFunction={(e) => {
+            const inputValue = e.target.value;
+            const setter = setTitle;
+            onChangeInputs({ inputValue, todoData, setTodoData, setter });
+          }}
+        />
+        <Input
+          onChangeFunction={(e) => {
+            const inputValue = e.target.value;
+            const setter = setDescription;
+            onChangeInputs({ inputValue, todoData, setTodoData, setter });
+          }}
+        />
+        <Button
+          className={"inputBox-button"}
+          onClickFunction={() => {
+            onCreate({ setAllTodos, newTodo, allTodos });
+          }}
+          text={"create"}
+        />
+      </div>
     </div>
   );
 };

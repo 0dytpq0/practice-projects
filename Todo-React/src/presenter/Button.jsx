@@ -1,6 +1,7 @@
-export const Button = ({ onClickFunction, text }) => {
+export const Button = ({ className, onClickFunction, text }) => {
   return (
     <button
+      className={className}
       onClick={() => {
         onClickFunction();
       }}
