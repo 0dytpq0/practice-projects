@@ -1,24 +1,45 @@
 import { useState } from "react";
+import { onCreate } from "../container/Create";
 import { onChangeInputs } from "../container/Input";
+import { Button } from "./Button";
 
-export const InputBox = () => {
-  const [context, setContext] = useState("");
+export const InputBox = ({ allTodos, setAllTodos }) => {
+  const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
-  console.log("context", context);
-  console.log("title", title);
+  const [todoData, setTodoData] = useState({});
+  const newTodo = {
+    id: new Date().getTime(),
+    title,
+    description,
+    completed: false,
+  };
   return (
     <div>
       <input
         onChange={(e) => {
           const inputValue = onChangeInputs(e);
-          setContext(inputValue);
+          setTitle(() => inputValue);
+          setTodoData(() => ({
+            title: inputValue,
+            description: todoData.description,
+          }));
         }}
       />
       <input
         onChange={(e) => {
           const inputValue = onChangeInputs(e);
-          setTitle(inputValue);
+          setDescription(() => inputValue);
+          setTodoData(() => ({
+            description: inputValue,
+            title: todoData.title,
+          }));
         }}
+      />
+      <Button
+        onClickFunction={() => {
+          onCreate({ setAllTodos, newTodo, allTodos });
+        }}
+        text={"create"}
       />
     </div>
   );

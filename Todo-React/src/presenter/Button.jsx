@@ -1,7 +1,11 @@
-export const Button = (props) => {
+export const Button = ({ onClickFunction, text }) => {
   return (
-    <div>
-      <button onClick={props}>Click me</button>
-    </div>
+    <button
+      onClick={() => {
+        onClickFunction();
+      }}
+    >
+      {text}
+    </button>
   );
 };
