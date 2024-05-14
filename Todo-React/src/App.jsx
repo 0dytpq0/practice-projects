@@ -4,7 +4,9 @@ import { Card } from "./presenter/Card";
 import { InputBox } from "./presenter/InputBox";
 
 function App() {
-  const [allTodos, setAllTodos] = useState([]);
+  const [allTodos, setAllTodos] = useState(
+    JSON.parse(localStorage.getItem("todos")) ?? []
+  );
   return (
     <>
       <InputBox allTodos={allTodos} setAllTodos={setAllTodos} />
