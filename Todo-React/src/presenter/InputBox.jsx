@@ -16,9 +16,9 @@ export const InputBox = ({ allTodos, setAllTodos }) => {
   };
   return (
     <div className="inputBox-container">
-      <div className="inputBox-header">header</div>
-      <div className="inputBox-section">
+      <form className="inputBox-section">
         <Input
+          placeholder={"제목을 입력해주세요."}
           onChangeFunction={(e) => {
             const inputValue = e.target.value;
             const setter = setTitle;
@@ -26,6 +26,7 @@ export const InputBox = ({ allTodos, setAllTodos }) => {
           }}
         />
         <Input
+          placeholder={"할 일을 입력해주세요."}
           onChangeFunction={(e) => {
             const inputValue = e.target.value;
             const setter = setDescription;
@@ -37,9 +38,9 @@ export const InputBox = ({ allTodos, setAllTodos }) => {
           onClickFunction={() => {
             onCreate({ setAllTodos, newTodo, allTodos });
           }}
-          text={"create"}
+          text={"생성"}
         />
-      </div>
+      </form>
     </div>
   );
 };

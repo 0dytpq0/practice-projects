@@ -16,7 +16,7 @@ export const Card = ({ allTodos, setAllTodos, isDone }) => {
   const cards = isDone
     ? doneTodos &&
       doneTodos.map((todo) => (
-        <div key={todo.id} className="card">
+        <div key={todo.id} className="card done">
           <div className="card-title">{todo.title}</div>
           <div className="card-description">{todo.description}</div>
           <div className="card-buttonBox">
@@ -37,15 +37,19 @@ export const Card = ({ allTodos, setAllTodos, isDone }) => {
       ))
     : haveTodos &&
       haveTodos.map((todo) => (
-        <div key={todo.id} className="card">
+        <div key={todo.id} className="card have">
           <div className="card-title">{todo.title}</div>
           <div className="card-description">{todo.description}</div>
           <div className="card-buttonBox">
             <Button
-              onClickFunction={() => onDeleteTodo({ todo, setAllTodos })}
+              className="delete-button"
+              onClickFunction={() =>
+                onDeleteTodo({ todo, allTodos, setAllTodos })
+              }
               text="삭제"
             />
             <Button
+              className="complete-button"
               onClickFunction={() =>
                 onCompleteTodo({ todo, allTodos, setAllTodos })
               }

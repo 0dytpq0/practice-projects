@@ -9,20 +9,32 @@
   .container {
     @apply w-screen h-screen mx-auto my-0;
   }
-  .inputBox-button {
-    @apply bg-slate-400 text-lime-100;
-  }
+
   .inputBox-container {
     @apply flex flex-col items-center w-full;
+
+    .inputBox-section {
+      @apply flex justify-center items-center w-full;
+
+      .inputBox-input {
+        @apply w-1/6 border-2 border-lime-600 rounded-md p-1 m-4;
+      }
+
+      .inputBox-button {
+        @apply w-32 h-10 m-4 rounded-md border-2 border-lime-600 bg-white text-lime-600;
+      }
+    }
   }
-  .inputBox-section {
-    @apply bg-slate-300 flex justify-around w-full;
-  }
-  .inputBox-input {
-    @apply w-1/6;
-  }
+
   .card-container {
     @apply flex w-full overflow-x-scroll;
+
+    .have {
+      @apply border-lime-600;
+    }
+    .done {
+      @apply border-cyan-700;
+    }
 
     .card {
       @apply flex flex-col min-w-72 w-72 h-60 items-center justify-around border-2 rounded-xl m-5;
@@ -35,6 +47,9 @@
       }
       .card-buttonBox {
         @apply w-full flex flex-row justify-around;
+      }
+      button {
+        @apply w-24 bg-slate-300 text-gray-50 rounded-3xl;
       }
     }
   }
