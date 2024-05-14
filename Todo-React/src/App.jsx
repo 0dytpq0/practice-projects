@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <InputBox allTodos={allTodos} setAllTodos={setAllTodos} />
-      <Card allTodos={allTodos} />
+      <Card allTodos={allTodos} setAllTodos={setAllTodos} />
     </>
   );
 }

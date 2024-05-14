@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Button } from "../container/Button";
 import { onCreate } from "../container/Create";
 import { onChangeInputs } from "../container/Input";
-import { Button } from "./Button";
 
 export const InputBox = ({ allTodos, setAllTodos }) => {
   const [description, setDescription] = useState("");
