@@ -11,9 +11,11 @@ function App() {
   return (
     <div className="container">
       <InputBox allTodos={allTodos} setAllTodos={setAllTodos} />
+      <div className="container-title working-title">Working!</div>
       <div className="card-container">
         <Card allTodos={allTodos} setAllTodos={setAllTodos} isDone={false} />
       </div>
+      <div className="container-title done-title">Done!</div>
       <div className="card-container">
         <Card allTodos={allTodos} setAllTodos={setAllTodos} isDone={true} />
       </div>

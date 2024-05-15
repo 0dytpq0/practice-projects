@@ -7,7 +7,16 @@
     @apply hidden;
   }
   .container {
-    @apply w-screen h-screen mx-auto my-0;
+    @apply w-[1280px] h-[800px] mx-auto my-0;
+  }
+  .container-title {
+    @apply text-5xl p-5;
+  }
+  .working-title {
+    @apply text-rose-600;
+  }
+  .done-title {
+    @apply text-slate-500;
   }
 
   .inputBox-container {
@@ -29,7 +38,7 @@
   .card-container {
     @apply flex w-full overflow-x-scroll;
 
-    .have {
+    .working {
       @apply border-lime-600;
     }
     .done {
@@ -40,10 +49,10 @@
       @apply flex flex-col min-w-72 w-72 h-60 items-center justify-around border-2 rounded-xl m-5;
 
       .card-title {
-        @apply text-xl mb-3;
+        @apply text-3xl mb-3  w-3/4 break-words line-clamp-2;
       }
       .card-description {
-        @apply text-lg mb-3;
+        @apply text-lg mb-3 p-10 w-full  break-words line-clamp-2;
       }
       .card-buttonBox {
         @apply w-full flex flex-row justify-around;

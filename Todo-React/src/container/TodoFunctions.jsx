@@ -11,8 +11,6 @@ const onCreate = ({ setAllTodos, allTodos, newTodo }) => {
   allTodos.length === 0
     ? localStorage.setItem("todos", JSON.stringify([newTodo]))
     : localStorage.setItem("todos", JSON.stringify([newTodo, ...allTodos]));
-
-  console.log("newTodo", newTodo);
 };
 
 const onCompleteTodo = ({ todo, allTodos, setAllTodos }) => {
@@ -28,4 +26,15 @@ const onCompleteTodo = ({ todo, allTodos, setAllTodos }) => {
   localStorage.setItem("todos", JSON.stringify(completed));
 };
 
-export { onCompleteTodo, onCreate, onDeleteTodo };
+const isDoneFunc = ({ allTodos = [] }) => {
+  const doneTodos = allTodos.filter((item) => {
+    return item.completed === true;
+  });
+  const haveTodos = allTodos.filter((item) => {
+    return item.completed === false;
+  });
+
+  return { doneTodos, haveTodos };
+};
+
+export { isDoneFunc, onCompleteTodo, onCreate, onDeleteTodo };
