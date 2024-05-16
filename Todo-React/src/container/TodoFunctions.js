@@ -27,14 +27,13 @@ const onCompleteTodo = ({ todo, allTodos, setAllTodos }) => {
 };
 
 const isDoneFunc = ({ allTodos = [] }) => {
-  const doneTodos = allTodos.filter((item) => {
-    return item.completed === true;
-  });
-  const haveTodos = allTodos.filter((item) => {
-    return item.completed === false;
-  });
-
-  return { doneTodos, haveTodos };
+  const doneTodos = [];
+  const workingTodos = [];
+  for (let i = 0; i < allTodos.length; i++) {
+    if (allTodos[i].completed === true) doneTodos.push(allTodos[i]);
+    if (allTodos[i].completed === false) workingTodos.push(allTodos[i]);
+  }
+  return { doneTodos, workingTodos };
 };
 
 export { isDoneFunc, onCompleteTodo, onCreate, onDeleteTodo };

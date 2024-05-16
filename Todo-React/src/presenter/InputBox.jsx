@@ -38,8 +38,9 @@ export const InputBox = ({ allTodos = [], setAllTodos }) => {
           onClickFunction={() => {
             onCreate({ setAllTodos, newTodo, allTodos });
           }}
-          text={"생성"}
-        />
+        >
+          생성
+        </Button>
       </form>
     </div>
   );

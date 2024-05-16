@@ -16,25 +16,26 @@ const makeCard = (todos = [], allTodos = [], setAllTodos, isDone) => {
       <div className="card-buttonBox">
         <Button
           onClickFunction={() => onDeleteTodo({ todo, allTodos, setAllTodos })}
-          text="삭제"
-        />
+        >
+          삭제
+        </Button>
         <Button
           onClickFunction={() =>
             onCompleteTodo({ todo, allTodos, setAllTodos })
           }
-          text={isDone === true ? "취소" : "완료"}
-        />
+        >
+          {isDone === true ? "취소" : "완료"}
+        </Button>
       </div>
     </div>
   ));
 };
 
 export const Card = ({ allTodos = [], setAllTodos, isDone }) => {
-  const { doneTodos, haveTodos } = isDoneFunc({ allTodos });
-  console.log("doneTodos, haveTodos", doneTodos, haveTodos);
+  const { doneTodos, workingTodos } = isDoneFunc({ allTodos });
   const cards = isDone
     ? makeCard(doneTodos, allTodos, setAllTodos, isDone)
-    : makeCard(haveTodos, allTodos, setAllTodos, isDone);
+    : makeCard(workingTodos, allTodos, setAllTodos, isDone);
 
   return cards;
 };

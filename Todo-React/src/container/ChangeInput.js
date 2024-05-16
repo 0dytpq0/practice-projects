@@ -8,5 +8,5 @@ export const onChangeInputs = ({
     title: inputValue,
     description: todoData.description,
   }));
-  setter(() => inputValue);
+  setter(inputValue);
 };
