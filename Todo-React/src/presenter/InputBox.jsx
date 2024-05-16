@@ -4,7 +4,7 @@ import { onCreate } from "../container/TodoFunctions";
 import { Button } from "./Button";
 import { Input } from "./Input";
 
-export const InputBox = ({ allTodos, setAllTodos }) => {
+export const InputBox = ({ allTodos = [], setAllTodos }) => {
   const [description, setDescription] = useState("");
   const [title, setTitle] = useState("");
   const [todoData, setTodoData] = useState({});

@@ -5,7 +5,7 @@ import {
 } from "../container/TodoFunctions";
 import { Button } from "./Button";
 
-const makeCard = (todos = [], allTodos, setAllTodos, isDone) => {
+const makeCard = (todos = [], allTodos = [], setAllTodos, isDone) => {
   return todos.map((todo) => (
     <div
       key={todo.id}
