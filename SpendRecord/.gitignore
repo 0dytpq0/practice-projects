@@ -12,7 +12,7 @@ dist
 dist-ssr
 *.local
 
-practice-projects/
+../practice-projects/
 
 # Editor directories and files
 .vscode/*
