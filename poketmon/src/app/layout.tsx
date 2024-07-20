@@ -1,4 +1,3 @@
-import { KakaoProvider } from "@/contexts/useKakao.context";
 import QueryProvider from "@/query/queryClient";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -19,9 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <QueryProvider>
-          <KakaoProvider>{children}</KakaoProvider>
-        </QueryProvider>
+        <QueryProvider>{children}</QueryProvider>
       </body>
     </html>
   );

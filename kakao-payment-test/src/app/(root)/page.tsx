@@ -9,6 +9,5 @@ export default function Home() {
     queryFn: () => postDataToKakaoPay(),
   });
 
-  console.log("data", data);
   return <main>asd</main>;
 }

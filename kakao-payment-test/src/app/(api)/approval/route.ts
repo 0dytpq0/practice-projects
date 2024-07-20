@@ -9,14 +9,17 @@ const headers = {
 const instantAxios = axios.create({ baseURL: "https://open-api.kakaopay.com" });
 export const POST = async (req: NextRequest, res: NextResponse) => {
   const data = await req.json();
+  console.log("data", data);
   try {
-    const response = await instantAxios.post("/online/v1/payment/ready", data, {
-      headers,
-    });
+    const response = await instantAxios.post(
+      "/online/v1/payment/approve",
+      data,
+      {
+        headers,
+      }
+    );
 
-    console.log("response.data", response.data);
-
-    return NextResponse.json({ data: response.data });
+    return NextResponse.json(response.data);
   } catch (error) {
     console.log("error", error);
     return NextResponse.json({ error });
